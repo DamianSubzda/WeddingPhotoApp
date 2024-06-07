@@ -1,0 +1,134 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\dsubzda\\Desktop\\vsProj\\WeddingPhotoApp\\WeddingPhotoServer\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E2548E37-0DD8-4DB3-BEA9-B211CE990638}|WeddingPhotoServer.csproj|c:\\users\\dsubzda\\desktop\\vsproj\\weddingphotoapp\\weddingphotoserver\\controllers\\photocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2548E37-0DD8-4DB3-BEA9-B211CE990638}|WeddingPhotoServer.csproj|solutionrelative:controllers\\photocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2548E37-0DD8-4DB3-BEA9-B211CE990638}|WeddingPhotoServer.csproj|C:\\Users\\dsubzda\\Desktop\\vsProj\\WeddingPhotoApp\\WeddingPhotoServer\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E2548E37-0DD8-4DB3-BEA9-B211CE990638}|WeddingPhotoServer.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2548E37-0DD8-4DB3-BEA9-B211CE990638}|WeddingPhotoServer.csproj|C:\\Users\\dsubzda\\Desktop\\vsProj\\WeddingPhotoApp\\WeddingPhotoServer\\model\\photo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2548E37-0DD8-4DB3-BEA9-B211CE990638}|WeddingPhotoServer.csproj|solutionrelative:model\\photo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2548E37-0DD8-4DB3-BEA9-B211CE990638}|WeddingPhotoServer.csproj|c:\\users\\dsubzda\\desktop\\vsproj\\weddingphotoapp\\weddingphotoserver\\dto\\photodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2548E37-0DD8-4DB3-BEA9-B211CE990638}|WeddingPhotoServer.csproj|solutionrelative:dto\\photodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2548E37-0DD8-4DB3-BEA9-B211CE990638}|WeddingPhotoServer.csproj|C:\\Users\\dsubzda\\Desktop\\vsProj\\WeddingPhotoApp\\WeddingPhotoServer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2548E37-0DD8-4DB3-BEA9-B211CE990638}|WeddingPhotoServer.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2548E37-0DD8-4DB3-BEA9-B211CE990638}|WeddingPhotoServer.csproj|c:\\users\\dsubzda\\desktop\\vsproj\\weddingphotoapp\\weddingphotoserver\\infrastructure\\interface\\pathprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2548E37-0DD8-4DB3-BEA9-B211CE990638}|WeddingPhotoServer.csproj|solutionrelative:infrastructure\\interface\\pathprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 230,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PhotoDTO.cs",
+              "DocumentMoniker": "C:\\Users\\dsubzda\\Desktop\\vsProj\\WeddingPhotoApp\\WeddingPhotoServer\\DTO\\PhotoDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\PhotoDTO.cs",
+              "ToolTip": "C:\\Users\\dsubzda\\Desktop\\vsProj\\WeddingPhotoApp\\WeddingPhotoServer\\DTO\\PhotoDTO.cs",
+              "RelativeToolTip": "DTO\\PhotoDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-07T12:26:40.649Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PathProvider.cs",
+              "DocumentMoniker": "C:\\Users\\dsubzda\\Desktop\\vsProj\\WeddingPhotoApp\\WeddingPhotoServer\\Infrastructure\\Interface\\PathProvider.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Interface\\PathProvider.cs",
+              "ToolTip": "C:\\Users\\dsubzda\\Desktop\\vsProj\\WeddingPhotoApp\\WeddingPhotoServer\\Infrastructure\\Interface\\PathProvider.cs",
+              "RelativeToolTip": "Infrastructure\\Interface\\PathProvider.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAADwvxwAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-07T12:13:51.479Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\dsubzda\\Desktop\\vsProj\\WeddingPhotoApp\\WeddingPhotoServer\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\dsubzda\\Desktop\\vsProj\\WeddingPhotoApp\\WeddingPhotoServer\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-06-06T08:18:33.391Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PhotoController.cs",
+              "DocumentMoniker": "C:\\Users\\dsubzda\\Desktop\\vsProj\\WeddingPhotoApp\\WeddingPhotoServer\\Controllers\\PhotoController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PhotoController.cs",
+              "ToolTip": "C:\\Users\\dsubzda\\Desktop\\vsProj\\WeddingPhotoApp\\WeddingPhotoServer\\Controllers\\PhotoController.cs",
+              "RelativeToolTip": "Controllers\\PhotoController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEkAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T06:51:49.314Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Photo.cs",
+              "DocumentMoniker": "C:\\Users\\dsubzda\\Desktop\\vsProj\\WeddingPhotoApp\\WeddingPhotoServer\\Model\\Photo.cs",
+              "RelativeDocumentMoniker": "Model\\Photo.cs",
+              "ToolTip": "C:\\Users\\dsubzda\\Desktop\\vsProj\\WeddingPhotoApp\\WeddingPhotoServer\\Model\\Photo.cs",
+              "RelativeToolTip": "Model\\Photo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T09:04:57.131Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\dsubzda\\Desktop\\vsProj\\WeddingPhotoApp\\WeddingPhotoServer\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\dsubzda\\Desktop\\vsProj\\WeddingPhotoApp\\WeddingPhotoServer\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T08:47:48.103Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

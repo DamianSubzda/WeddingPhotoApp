@@ -1,0 +1,10 @@
+.gallery{
+    width: inherit;
+    min-height: 100vh;
+}
+.infinite-scroll-component__outerdiv{
+    width: inherit;
+} 
+.gallery-infinitescroll{
+    width: inherit;
+}

@@ -1,0 +1,36 @@
+.content {
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  background-color: #d1bde0
+}
+.viewer{
+  position: relative;
+  width: inherit;
+  margin: auto;
+}
+.button-group{
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.delete-button{
+  color: red;
+  background-color: white;
+  border: 1px solid black;
+  margin-left: 2.5vw;
+  margin-top: 2.5vw;
+  font-size: 5vw;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.delete-button:hover{
+  cursor: pointer;
+}
+.App{
+  background-color: #997BD9;
+}

@@ -1,0 +1,12 @@
+.photo-viewer {
+    width: 80vw;
+    margin: 5vw 5vw;
+    border: 1px solid black;
+    text-align: center;
+    align-content: center;
+    color: grey;
+    font-size: small;
+}
+.image-viewer{
+    width: inherit;
+}

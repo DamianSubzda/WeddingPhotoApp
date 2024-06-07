@@ -1,0 +1,6 @@
+.image-gallery {
+    max-width: 100%;
+    height: auto;
+    width: calc(100% - 1rem);
+    margin: 0 0.5rem;
+}
