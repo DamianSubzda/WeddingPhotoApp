@@ -15,7 +15,7 @@
       "RelativeMoniker": "D:0:0:{E2548E37-0DD8-4DB3-BEA9-B211CE990638}|WeddingPhotoServer.csproj|solutionrelative:model\\photo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E2548E37-0DD8-4DB3-BEA9-B211CE990638}|WeddingPhotoServer.csproj|c:\\users\\dsubzda\\desktop\\vsproj\\weddingphotoapp\\weddingphotoserver\\dto\\photodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E2548E37-0DD8-4DB3-BEA9-B211CE990638}|WeddingPhotoServer.csproj|C:\\Users\\dsubzda\\Desktop\\vsProj\\WeddingPhotoApp\\WeddingPhotoServer\\dto\\photodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E2548E37-0DD8-4DB3-BEA9-B211CE990638}|WeddingPhotoServer.csproj|solutionrelative:dto\\photodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -23,7 +23,7 @@
       "RelativeMoniker": "D:0:0:{E2548E37-0DD8-4DB3-BEA9-B211CE990638}|WeddingPhotoServer.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E2548E37-0DD8-4DB3-BEA9-B211CE990638}|WeddingPhotoServer.csproj|c:\\users\\dsubzda\\desktop\\vsproj\\weddingphotoapp\\weddingphotoserver\\infrastructure\\interface\\pathprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E2548E37-0DD8-4DB3-BEA9-B211CE990638}|WeddingPhotoServer.csproj|C:\\Users\\dsubzda\\Desktop\\vsProj\\WeddingPhotoApp\\WeddingPhotoServer\\infrastructure\\interface\\pathprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E2548E37-0DD8-4DB3-BEA9-B211CE990638}|WeddingPhotoServer.csproj|solutionrelative:infrastructure\\interface\\pathprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -58,8 +58,7 @@
               "RelativeToolTip": "DTO\\PhotoDTO.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-07T12:26:40.649Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-07T12:26:40.649Z"
             },
             {
               "$type": "Document",
@@ -71,8 +70,7 @@
               "RelativeToolTip": "Infrastructure\\Interface\\PathProvider.cs",
               "ViewState": "AQIAABIAAAAAAAAAAADwvxwAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-07T12:13:51.479Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-07T12:13:51.479Z"
             },
             {
               "$type": "Document",
@@ -84,8 +82,7 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-06-06T08:18:33.391Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-06T08:18:33.391Z"
             },
             {
               "$type": "Document",
@@ -95,7 +92,7 @@
               "RelativeDocumentMoniker": "Controllers\\PhotoController.cs",
               "ToolTip": "C:\\Users\\dsubzda\\Desktop\\vsProj\\WeddingPhotoApp\\WeddingPhotoServer\\Controllers\\PhotoController.cs",
               "RelativeToolTip": "Controllers\\PhotoController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEkAAAAqAAAA",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAowCoAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-03T06:51:49.314Z",
               "EditorCaption": ""
@@ -110,8 +107,7 @@
               "RelativeToolTip": "Model\\Photo.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T09:04:57.131Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-31T09:04:57.131Z"
             },
             {
               "$type": "Document",
@@ -123,8 +119,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T08:47:48.103Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-31T08:47:48.103Z"
             }
           ]
         }

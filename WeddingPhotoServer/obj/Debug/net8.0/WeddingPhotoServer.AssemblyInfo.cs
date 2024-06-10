@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WeddingPhotoServer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d416e72c368498b9bcf99166231befbe44602ffb")]
 [assembly: System.Reflection.AssemblyProductAttribute("WeddingPhotoServer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WeddingPhotoServer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

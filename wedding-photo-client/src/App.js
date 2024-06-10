@@ -58,8 +58,8 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Header></Header>
+    <div className="app">
+      <Header className="header"></Header>
       <div className="content">
         <Section>
           {photo && (

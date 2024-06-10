@@ -1,6 +1,6 @@
 .gallery{
     width: inherit;
-    min-height: 100vh;
+    text-align: center;
 }
 .infinite-scroll-component__outerdiv{
     width: inherit;

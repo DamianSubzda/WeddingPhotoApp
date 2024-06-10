@@ -1,11 +1,22 @@
-.content {
-  align-content: center;
-  align-items: center;
-  justify-content: center;
+.app{
   display: flex;
   flex-direction: column;
-  background-color: #d1bde0
+  height: 100vh;
 }
+.header{
+  width: 100%;
+}
+.content {
+  padding-top: 2rem;
+  width: 100%;
+  flex-grow: 1;
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  background-color: #d1bde0;
+}
+
 .viewer{
   position: relative;
   width: inherit;
@@ -30,7 +41,4 @@
 
 .delete-button:hover{
   cursor: pointer;
-}
-.App{
-  background-color: #997BD9;
 }
