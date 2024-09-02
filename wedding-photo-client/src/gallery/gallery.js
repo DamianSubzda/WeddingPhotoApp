@@ -5,50 +5,65 @@ import { React, useEffect, useState } from 'react';
 import Photo from './photo';
 
 function Gallery({reloadGallery}) {
-    const pageSize = 10
+    const pageSize = 10;
     const [photos, setPhotos] = useState([]);
     const [hasMore, setHasMore] = useState(true);
     const [pageNumber, setPageNumber] = useState(2);
+    const [isLoading, setIsLoading] = useState(true);
 
-    useEffect(()=> {
+    useEffect(() => {
         axios
-        .get(`https://localhost:7058/api/photos?pageNumber=1&pageSize=${pageSize}`)
-        .then((res) => setPhotos(res.data))
-        .catch((err) => console.log(err));
+            .get(`https://localhost:7058/api/photos?pageNumber=1&pageSize=${pageSize}`)
+            .then((res) => {
+                setPhotos(res.data);
+                setHasMore(res.data.length >= pageSize);
+            })
+            .catch((err) => console.log(err))
+            .finally(() => setIsLoading(false));
     }, [reloadGallery]);
 
     const fetchPhotos = () => {
-      axios
-        .get(`https://localhost:7058/api/photos?pageNumber=${pageNumber}&pageSize=${pageSize}`)
-        .then((response) => {
-          setPhotos((prevPhotos) => [...prevPhotos, ...response.data]);
-          response.data.length < pageSize ? setHasMore(false) : setHasMore(true);
-        })
-        .catch((err) => console.log(err));
+        axios
+            .get(`https://localhost:7058/api/photos?pageNumber=${pageNumber}&pageSize=${pageSize}`)
+            .then((response) => {
+                setPhotos((prevPhotos) => [...prevPhotos, ...response.data]);
+                setHasMore(response.data.length >= pageSize);
+            })
+            .catch((err) => console.log(err));
 
         setPageNumber((prevPageNumber) => prevPageNumber + 1);
     };
 
-
     return (
         <div className='gallery'>
-            <InfiniteScroll
-                style={{ width: 'inherit' }}  
-                dataLength={photos.length}
-                next={fetchPhotos}
-                hasMore={hasMore}
-                loader={<h4>Loading...</h4>}
-                endMessage={
+            {isLoading ? (
+                <h4>Loading...</h4>
+            ) : (
+                photos.length === 0 ? (
                     <p style={{ textAlign: 'center' }}>
-                        <b>Nie ma więcej... Niestety!</b>
+                        <b>Brak zdjęć do wyświetlenia</b>
                     </p>
-                }>
-                {photos
-                .filter(photo => photo.addToGallery)
-                .map(photo => (
-                    <Photo key={photo.id} photo={photo} />
-                ))}
-            </InfiniteScroll>
+                ) : (
+                    <InfiniteScroll
+                        style={{ width: 'inherit' }}  
+                        dataLength={photos.length}
+                        next={fetchPhotos}
+                        hasMore={hasMore}
+                        loader={<h4>Loading...</h4>}
+                        endMessage={
+                            <p style={{ textAlign: 'center' }}>
+                                <b>Nie ma więcej... Niestety!</b>
+                            </p>
+                        }
+                    >
+                        {photos
+                        .filter(photo => photo.addToGallery)
+                        .map(photo => (
+                            <Photo key={photo.id} photo={photo} />
+                        ))}
+                    </InfiniteScroll>
+                )
+            )}
         </div>
     );
 }

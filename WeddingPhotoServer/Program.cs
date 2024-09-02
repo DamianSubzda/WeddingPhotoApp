@@ -23,7 +23,7 @@ builder.Services.AddCors(options =>
 });
 
 builder.Services.AddSingleton<IPathProvider, PathProvider>();
-builder.Services.AddSingleton<IPhotoRepo, PhotoRepo>();
+builder.Services.AddScoped<IPhotoRepo, PhotoRepo>();
 builder.Services.AddControllers();
 
 var app = builder.Build();

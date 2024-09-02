@@ -14,7 +14,7 @@ namespace WeddingPhotoServer.Repositories
     public interface IPhotoRepo
     {
         Task<PhotoDTO> UploadPhoto(IFormFile file, bool addToGallery, int rotation, HttpRequest request);
-        Task<FileStream> GetPhoto(string fileName);
+        FileStream GetPhoto(string fileName);
         Task<List<PhotoDTO>> GetPhotosDTO(int pageNumber, int pageSize, HttpRequest request);
     }
     public class PhotoRepo : IPhotoRepo
@@ -27,7 +27,7 @@ namespace WeddingPhotoServer.Repositories
             _context = context;
         }
 
-        public async Task<FileStream> GetPhoto(string fileName)
+        public FileStream GetPhoto(string fileName)
         {
             var path = Path.Combine(_pathProvider.GetPath(), fileName);
             if (!File.Exists(path))
@@ -43,26 +43,31 @@ namespace WeddingPhotoServer.Repositories
                 .OrderByDescending(x => x.CreatedAt)
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
+                .Select(photo => new PhotoDTO
+                {
+                    Id = photo.Id,
+                    FileName = photo.FileName,
+                    FullFilePath = $"{request.Scheme}://{request.Host}/api/photos/{photo.Guid}_{photo.FileName}",
+                    CreatedAt = photo.CreatedAt,
+                    Description = photo.Description,
+                    AddToGallery = photo.AddToGallery
+                })
                 .ToListAsync();
 
-            var photoDtos = photos.Select(photo => new PhotoDTO
-            {
-                Id = photo.Id,
-                FileName = photo.FileName,
-                FullFilePath = $"{request.Scheme} :// {request.Host}/api/photos/{photo.Guid}_{photo.FileName}",
-                CreatedAt = photo.CreatedAt,
-                Description = photo.Description,
-                AddToGallery = photo.AddToGallery
-            }).ToList();
-
-            return photoDtos;
+            return photos;
         }
+
 
         public async Task<PhotoDTO> UploadPhoto(IFormFile file, bool addToGallery, int rotation, HttpRequest request)
         {
             if (file == null || file.Length == 0)
             {
                 throw new ArgumentNullException("No file uploaded");
+            }
+
+            if (!file.ContentType.StartsWith("image/"))
+            {
+                throw new ArgumentException("Uploaded file is not an image");
             }
 
             string guid = Guid.NewGuid().ToString();

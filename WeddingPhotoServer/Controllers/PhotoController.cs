@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WeddingPhotoServer.DTO;
-using WeddingPhotoServer.Infrastructure.Interface;
-using WeddingPhotoServer.Infrastrucure.Data;
 using WeddingPhotoServer.Repositories;
 
 namespace WeddingPhotoServer.Controllers
@@ -24,7 +22,7 @@ namespace WeddingPhotoServer.Controllers
                 var result = await _photoRepo.UploadPhoto(file, addToGallery, rotation, this.Request);
                 return Ok(result);
             }
-            catch(ArgumentNullException ex)
+            catch (Exception ex) when (ex is ArgumentException ||ex is ArgumentNullException) 
             {
                 return BadRequest(ex.Message);
             }
@@ -37,11 +35,11 @@ namespace WeddingPhotoServer.Controllers
         }
 
         [HttpGet("{fileName}")]
-        public async Task<IActionResult> Get(string fileName)
+        public IActionResult Get(string fileName)
         {
             try
             {
-                var result = await _photoRepo.GetPhoto(fileName);
+                var result = _photoRepo.GetPhoto(fileName);
                 return File(result, "image/jpeg");
             }
             catch (FileNotFoundException)
