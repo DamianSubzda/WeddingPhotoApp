@@ -1,10 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System.IO;
 using WeddingPhotoServer.DTO;
 using WeddingPhotoServer.Infrastructure.Interface;
 using WeddingPhotoServer.Infrastrucure.Data;
-using WeddingPhotoServer.Model;
+using WeddingPhotoServer.Repositories;
 
 namespace WeddingPhotoServer.Controllers
 {
@@ -12,72 +10,63 @@ namespace WeddingPhotoServer.Controllers
     [Route("api/photos")]
     public class PhotoController : Controller
     {
-        private readonly ApplicationDbContext _context;
-        private readonly IPathProvider _pathProvider;
-
-        public PhotoController(ApplicationDbContext context, IPathProvider pathProvider)
+        private readonly IPhotoRepo _photoRepo;
+        public PhotoController(IPhotoRepo photoRepo)
         {
-            _context = context;
-            _pathProvider = pathProvider;
+            _photoRepo = photoRepo;
         }
 
         [HttpPost("upload")]
-        public async Task<IActionResult> Upload(IFormFile file)
+        public async Task<IActionResult> Upload(IFormFile file, [FromForm] bool addToGallery, [FromForm] int rotation)
         {
-            if (file == null || file.Length == 0)
-                return BadRequest("No file uploaded.");
-            string guid = Guid.NewGuid().ToString();
-            string fileName = guid + "_" + file.FileName;
-            var path = Path.Combine(Directory.GetCurrentDirectory(), _pathProvider.GetDirectory());
-            var fullPath = Path.Combine(path, fileName);
-            using (var stream = new FileStream(fullPath, FileMode.Create))
+            try
             {
-                await file.CopyToAsync(stream);
+                var result = await _photoRepo.UploadPhoto(file, addToGallery, rotation, this.Request);
+                return Ok(result);
+            }
+            catch(ArgumentNullException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch
+            {
+                return StatusCode(500, "Internal server error");
             }
 
-            var photo = new Photo
-            {
-                FileName = file.FileName,
-                Guid = guid,
-                FileDirectory = _pathProvider.GetDirectory(),
-                AddToGallery = true //TODO 
-            };
-            _context.Photos.Add(photo);
-            await _context.SaveChangesAsync();
-
-            return Ok(new { photo.Id, fileName });
+            
         }
 
         [HttpGet("{fileName}")]
-        public IActionResult Get(string fileName)
+        public async Task<IActionResult> Get(string fileName)
         {
-            var path = Path.Combine(_pathProvider.GetPath(), fileName);
-            if (!System.IO.File.Exists(path))
-                return NotFound();
+            try
+            {
+                var result = await _photoRepo.GetPhoto(fileName);
+                return File(result, "image/jpeg");
+            }
+            catch (FileNotFoundException)
+            {
+                return NotFound($"File: {fileName} not found!");
+            }
+            catch
+            {
+                return StatusCode(500, "Internal server error");
+            }
 
-            var imageFileStream = System.IO.File.OpenRead(path);
-            return File(imageFileStream, "image/jpeg");
         }
 
         [HttpGet("")]
-        public async Task<ActionResult<IEnumerable<PhotoDTO>>> GetPhotos(int pageNumber = 1, int pageSize = 10)
+        public async Task<ActionResult<IEnumerable<PhotoDTO>>> GetPhotosDTO(int pageNumber = 1, int pageSize = 10)
         {
-            var photos = await _context.Photos
-                .OrderByDescending(x => x.CreatedAt)
-                .Skip((pageNumber - 1) * pageSize)
-                .Take(pageSize)
-                .ToListAsync();
-
-            var photoDtos = photos.Select(photo => new PhotoDTO
+            try
             {
-                Id = photo.Id,
-                FileName = photo.FileName,
-                FullFilePath = $"{this.Request.Scheme}://{this.Request.Host}/api/photos/{photo.Guid}_{photo.FileName}",
-                CreatedAt = photo.CreatedAt,
-                AddToGallery = photo.AddToGallery
-            }).ToList();
-
-            return Ok(photoDtos);
+                var result = await _photoRepo.GetPhotosDTO(pageNumber, pageSize, this.Request);
+                return Ok(result);
+            }
+            catch
+            {
+                return StatusCode(500, "Internal server error");
+            }
         }
 
     }

@@ -9,7 +9,6 @@ function Gallery({reloadGallery}) {
     const [photos, setPhotos] = useState([]);
     const [hasMore, setHasMore] = useState(true);
     const [pageNumber, setPageNumber] = useState(2);
-    
 
     useEffect(()=> {
         axios
@@ -43,9 +42,10 @@ function Gallery({reloadGallery}) {
                     <p style={{ textAlign: 'center' }}>
                         <b>Nie ma więcej... Niestety!</b>
                     </p>
-                }
-            >
-                {photos.map(photo => (
+                }>
+                {photos
+                .filter(photo => photo.addToGallery)
+                .map(photo => (
                     <Photo key={photo.id} photo={photo} />
                 ))}
             </InfiniteScroll>

@@ -7,9 +7,8 @@
         public string? Guid { get; set; }
         public required string FileDirectory { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-        public string? SendBy { get ; set; }
-        public required bool AddToGallery { get; set; } = true;
+        public string? Description { get ; set; }
+        public required bool AddToGallery { get; set; }
 
-        //Opcja public - czy zdjęcia mają się wyświetlać na "ścianie"
     }
 }

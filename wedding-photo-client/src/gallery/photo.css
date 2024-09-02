@@ -1,6 +1,27 @@
-.image-gallery {
+.photo-container {
+    margin-bottom: 1rem;
+}
+
+.photo {
     max-width: 100%;
     height: auto;
     width: calc(100% - 1rem);
-    margin: 0 0.5rem;
+    /* margin: 0 0.5rem; */
+}
+
+.photo-caption {
+    text-align: center;
+    margin-top: 0.3rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.photo-time {
+    margin: 0;
+    font-weight: bold;
+}
+
+.photo-description {
+    margin-top: 0.2rem;
+    font-style: italic;
 }

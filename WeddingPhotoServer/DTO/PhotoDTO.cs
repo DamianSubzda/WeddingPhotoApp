@@ -6,6 +6,8 @@
         public required string FileName { get; set; }
         public required string FullFilePath { get; set; }
         public required DateTime CreatedAt { get; set; }
+        public string? Description { get; set; }
         public required bool AddToGallery { get; set; }
+
     }
 }

@@ -7,7 +7,7 @@ function Header() {
     <>
       <img
         src={header}
-        atl='Nagłowek'
+        alt='Nagłówek...'
         style={{ width: "100vw" }}
       ></img>
     </>

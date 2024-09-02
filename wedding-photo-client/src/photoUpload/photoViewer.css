@@ -9,4 +9,5 @@
 }
 .image-viewer{
     width: inherit;
+    transition: transform 0.3s ease;
 }

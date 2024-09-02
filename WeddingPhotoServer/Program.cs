@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.FileProviders;
 using WeddingPhotoServer.Infrastructure.Interface;
 using WeddingPhotoServer.Infrastrucure.Data;
+using WeddingPhotoServer.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,7 +21,9 @@ builder.Services.AddCors(options =>
                .AllowAnyMethod()
                .AllowAnyHeader());
 });
+
 builder.Services.AddSingleton<IPathProvider, PathProvider>();
+builder.Services.AddSingleton<IPhotoRepo, PhotoRepo>();
 builder.Services.AddControllers();
 
 var app = builder.Build();

@@ -38,7 +38,14 @@
   border-radius: 50%;
   position: absolute;
 }
-
 .delete-button:hover{
   cursor: pointer;
+}
+
+.rotate-button{
+  color:green;
+
+}
+.rotate-button:hover{
+  cursor:pointer;
 }
