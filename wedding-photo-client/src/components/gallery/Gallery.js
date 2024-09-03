@@ -12,21 +12,21 @@ function Gallery({ reloadGallery }) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const loadInitialPhotos = async () => {
-      try {
-        const data = await apiClient.fetchPhotos(1, pageSize);
-        setPhotos(data);
-        setHasMore(data.length >= pageSize);
-      } catch (error) {
-        console.log(error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
     loadInitialPhotos();
   }, [reloadGallery]);
 
+  const loadInitialPhotos = async () => {
+    try {
+      const data = await apiClient.fetchPhotos(1, pageSize);
+      setPhotos(data);
+      setHasMore(data.length >= pageSize);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+  
   const fetchPhotos = async () => {
     try {
       const data = await apiClient.fetchPhotos(pageNumber, pageSize);

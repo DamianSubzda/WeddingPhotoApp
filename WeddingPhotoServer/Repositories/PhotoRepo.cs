@@ -13,7 +13,7 @@ namespace WeddingPhotoServer.Repositories
 {
     public interface IPhotoRepo
     {
-        Task<PhotoDTO> UploadPhoto(IFormFile file, bool addToGallery, int rotation, HttpRequest request);
+        Task<PhotoDTO> UploadPhoto(IFormFile file, bool addToGallery, int rotation, string? description, HttpRequest request);
         FileStream GetPhoto(string fileName);
         Task<List<PhotoDTO>> GetPhotosDTO(int pageNumber, int pageSize, HttpRequest request);
     }
@@ -58,7 +58,7 @@ namespace WeddingPhotoServer.Repositories
         }
 
 
-        public async Task<PhotoDTO> UploadPhoto(IFormFile file, bool addToGallery, int rotation, HttpRequest request)
+        public async Task<PhotoDTO> UploadPhoto(IFormFile file, bool addToGallery, int rotation, string? description, HttpRequest request)
         {
             if (file == null || file.Length == 0)
             {
@@ -90,7 +90,8 @@ namespace WeddingPhotoServer.Repositories
                 FileName = file.FileName,
                 Guid = guid,
                 FileDirectory = _pathProvider.GetDirectory(),
-                AddToGallery = addToGallery
+                AddToGallery = addToGallery,
+                Description = description
             };
 
             _context.Photos.Add(photo);

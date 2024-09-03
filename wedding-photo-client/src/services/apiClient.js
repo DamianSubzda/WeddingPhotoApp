@@ -1,10 +1,11 @@
 const API_URL = "https://localhost:7058/api/";
 
 const apiClient = {
-  uploadPhoto: async (photoFile, rotation, addToGallery) => {
+  uploadPhoto: async (photoFile, rotation, addToGallery, description) => {
     const formData = new FormData();
     formData.append("file", photoFile);
     formData.append("rotation", rotation);
+    formData.append("description", description);
     formData.append("addToGallery", addToGallery);
 
     try {

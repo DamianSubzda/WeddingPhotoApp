@@ -15,11 +15,11 @@ namespace WeddingPhotoServer.Controllers
         }
 
         [HttpPost("upload")]
-        public async Task<IActionResult> Upload(IFormFile file, [FromForm] bool addToGallery, [FromForm] int rotation)
+        public async Task<IActionResult> Upload(IFormFile file, [FromForm] bool addToGallery, [FromForm] int rotation, [FromForm] string? description)
         {
             try
             {
-                var result = await _photoRepo.UploadPhoto(file, addToGallery, rotation, this.Request);
+                var result = await _photoRepo.UploadPhoto(file, addToGallery, rotation, description, this.Request);
                 return Ok(result);
             }
             catch (Exception ex) when (ex is ArgumentException || ex is ArgumentNullException) 
