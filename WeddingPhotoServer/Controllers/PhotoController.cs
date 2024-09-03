@@ -22,7 +22,7 @@ namespace WeddingPhotoServer.Controllers
                 var result = await _photoRepo.UploadPhoto(file, addToGallery, rotation, this.Request);
                 return Ok(result);
             }
-            catch (Exception ex) when (ex is ArgumentException ||ex is ArgumentNullException) 
+            catch (Exception ex) when (ex is ArgumentException || ex is ArgumentNullException) 
             {
                 return BadRequest(ex.Message);
             }

@@ -1,5 +1,5 @@
 import "./Header.css";
-import header from "./../assets/images/Nagłowek.png";
+import header from "./../../assets/images/Nagłowek.png";
 
 function Header() {
   return (
