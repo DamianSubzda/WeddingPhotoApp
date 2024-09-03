@@ -1,8 +1,8 @@
 import InfiniteScroll from 'react-infinite-scroll-component';
-import './gallery.css';
+import './Gallery.css';
 import axios from 'axios';
 import { React, useEffect, useState } from 'react';
-import Photo from './photo';
+import Photo from './Photo';
 
 function Gallery({reloadGallery}) {
     const pageSize = 10;

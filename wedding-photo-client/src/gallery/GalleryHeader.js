@@ -1,5 +1,5 @@
 import React from "react";
-import './galleryHeader.css'
+import './GalleryHeader.css'
 
 function GalleryHeader() {
     return (

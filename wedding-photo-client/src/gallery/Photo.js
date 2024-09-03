@@ -1,4 +1,4 @@
-import './photo.css';
+import './Photo.css';
 
 function Photo({ photo }) {
     

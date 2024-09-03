@@ -1,5 +1,4 @@
-import "./header.css";
-import header_image from "./../assets/image/KD_header.png";
+import "./Header.css";
 import header from "./../assets/image/Nagłowek.png";
 
 function Header() {

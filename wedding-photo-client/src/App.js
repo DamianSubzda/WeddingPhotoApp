@@ -1,11 +1,11 @@
 import React, { useState, useRef } from "react";
 import Header from "./header/Header";
 import Section from "./Section";
-import Button from "./photoUpload/button";
-import "./app.css";
-import PhotoViewer from "./photoUpload/photoViewer";
-import GalleryHeader from "./gallery/galleryHeader";
-import Gallery from "./gallery/gallery";
+import Button from "./photoUpload/Button";
+import "./App.css";
+import PhotoViewer from "./photoUpload/PhotoViewer";
+import GalleryHeader from "./gallery/GalleryHeader";
+import Gallery from "./gallery/Gallery";
 import { BsFillXCircleFill } from "react-icons/bs";
 import { FaRotateRight } from "react-icons/fa6";
 
@@ -108,7 +108,7 @@ function App() {
               content="Dodaj z galerii"
               onClick={() => galleryInputRef.current.click()}
             />
-            <Button content="Prześlij" onClick={sendPhoto} />
+            {photo && <Button content="Prześlij" onClick={sendPhoto} />}
           </div>
         </Section>
         <Section>

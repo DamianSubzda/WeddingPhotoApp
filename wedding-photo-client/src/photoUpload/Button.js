@@ -1,5 +1,5 @@
 import React from "react";
-import "./button.css";
+import "./Button.css";
 
 function Button({ content, onClick }) {
   return <div className="button" onClick={onClick}>{content}</div>;
