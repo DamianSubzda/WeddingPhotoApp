@@ -1,13 +1,16 @@
 .photo-viewer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 80vw;
-    margin: 5vw 5vw;
+    height: auto;
+    margin: 5vw auto;
     border: 1px solid black;
-    text-align: center;
-    align-content: center;
-    color: grey;
-    font-size: small;
+    overflow: hidden;
+    position: relative;
 }
-.image-viewer{
-    width: inherit;
-    transition: transform 0.3s ease;
+
+.image-viewer {
+    transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+    transform-origin: center center;
 }
