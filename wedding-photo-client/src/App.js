@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import Header from "./header/Header";
-import Section from "./Section";
+import Section from "./components/common/Section";
 import Button from "./photoUpload/Button";
 import "./App.css";
 import PhotoViewer from "./photoUpload/PhotoViewer";
