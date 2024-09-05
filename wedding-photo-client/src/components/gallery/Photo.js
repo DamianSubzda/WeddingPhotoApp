@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Photo.css";
-import { BsFillXCircleFill } from "react-icons/bs";
+import CloseButton from "../common/CloseButton";
 
 function Photo({ photo }) {
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -42,9 +42,8 @@ function Photo({ photo }) {
       {isFullscreen &&
       (
         <div className="full-screen" onClick={hidePhoto}>
-          <BsFillXCircleFill className="hide-button" onClick={hidePhoto} />
+          <CloseButton className="hide-button" onClick={hidePhoto} />
           <img
-            className="photo"
             src={photo.fullFilePath}
             alt={`${photo.fileName}`}
             onClick={(e) => e.stopPropagation()}

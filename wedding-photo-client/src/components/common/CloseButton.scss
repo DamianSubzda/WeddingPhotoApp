@@ -1,0 +1,67 @@
+@mixin cross($size: 20px, $color: currentColor, $thickness: 1px) {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    position: relative;
+    width: $size;
+    height: $size;
+  
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: ($size - $thickness) / 2;
+      left: 0;
+      right: 0;
+      height: $thickness;
+      background: $color;
+      border-radius: $thickness;
+    }
+  
+    &:before {
+      transform: rotate(45deg);
+    }
+  
+    &:after {
+      transform: rotate(-45deg);
+    }
+  
+    span {
+      display: block;
+    }
+  
+  }
+  
+  .btn-close {
+    margin-top: calc(5vw - 0.7rem);
+    margin-left: calc(5vw - 0.7rem);
+    border: 0;
+    padding: 0;
+    background: hsl(0, 100%, 50%);
+    border-radius: 50%;
+    width: 1.4rem;
+    height: 1.4rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background 150ms ease, transform 150ms ease;
+    position: absolute;
+    z-index: 999;
+    -webkit-box-shadow: 4px 4px 24px -1px rgba(106, 106, 106, 1);
+    -moz-box-shadow: 4px 4px 24px -1px rgba(106, 106, 106, 1);
+    box-shadow: 4px 4px 24px -1px rgba(106, 106, 106, 1);
+    
+    .icon-cross {
+      @include cross(1rem, #fff, 0.3rem);   
+    }
+    
+    &:hover,
+    &:focus {
+      transform: rotateZ(90deg);
+      background: hsl(0, 100%, 41%);
+    }
+  
+  }

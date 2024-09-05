@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import "./PhotoViewer.css";
-import { BsFillXCircleFill } from "react-icons/bs";
-import { FaRotateRight } from "react-icons/fa6";
+import CloseButton from "./../common/CloseButton"
+import RotateButton from "./../common/RotateButton"
 
 function PhotoViewer({ photo, rotation, deletePhoto, rotatePhoto, descriptionInputRef }) {
   const imageRef = useRef(null);
@@ -12,14 +12,11 @@ function PhotoViewer({ photo, rotation, deletePhoto, rotatePhoto, descriptionInp
     const img = imageRef.current;
     if (img) {
       const updateImageStyles = () => {
-        const { naturalWidth, naturalHeight } = img;
-        const aspectRatio = naturalWidth / naturalHeight;
-        setDivImageStyles({
-          height: rotation % 180 === 0 ? "auto" : `${80 * aspectRatio}vw`,
-        });
         setImageStyles({
-          width: rotation % 180 === 0 ? "80vw" : "auto",
-          height: rotation % 180 === 0 ? "auto" : "80vw",
+          width: rotation % 180 === 0 ? "80vw" : `auto`,
+          height: rotation % 180 === 0 ? "auto" : `80vw`,
+          maxWidth: rotation % 180 === 0 ? `calc(700px - 10vw)` : `none`,
+          maxHeight: rotation % 180 === 0 ? `none` : `calc(700px - 10vw)`,
         });
       };
 
@@ -31,12 +28,30 @@ function PhotoViewer({ photo, rotation, deletePhoto, rotatePhoto, descriptionInp
     }
   }, [photo, rotation]);
 
+  useEffect(() => {
+    const img = imageRef.current;
+    if (img) {
+      const updateDivStyles = () => {
+        const imageWidth = img.width;
+        setDivImageStyles({
+          height: rotation % 180 === 0 ? "auto" : `${imageWidth}px`,
+        });
+      };
+
+      if (img.complete) {
+        updateDivStyles();
+      } else {
+        img.onload = updateDivStyles;
+      }
+    }
+  }, [imageStyles, rotation]);
+
   return (
     <>
       {photo && (
         <div className="viewer">
-          <BsFillXCircleFill className="delete-button" onClick={deletePhoto} />
-          <FaRotateRight className="rotate-button" onClick={rotatePhoto} />
+          <CloseButton onClick={deletePhoto}/>
+          <RotateButton onCLick={rotatePhoto}/>
           <div className="viewer-section">
             <div
               className="photo-viewer"

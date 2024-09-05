@@ -1,7 +1,9 @@
 .viewer-section{
     display: flex;
     flex-direction: column;
-    width: 80vw;
+    align-items: center;
+    width: inherit;
+    max-width: 700px;
     height: auto;
     margin: 5vw auto;
 }
@@ -11,6 +13,7 @@
     justify-content: center;
     align-items: center;
     width: 80vw;
+    max-width: calc(700px - 10vw);
     height: auto;
     border: 1px solid black;
     overflow: hidden;
@@ -20,6 +23,7 @@
 .image-viewer {
     transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
     transform-origin: center center;
+    width: inherit;
 }
 
 .description-viewer{
@@ -36,33 +40,19 @@
     width: 100%;
 }
 
-.delete-button{
-    color: red;
-    background-color: white;
-    border: 2px solid black;
-    margin-left: 2.5vw;
-    margin-top: 2.5vw;
-    font-size: 5vw;
-    border-radius: 50%;
-    position: absolute;
-    z-index: 1;
-  }
-  .delete-button:hover{
-    cursor: pointer;
-  }
-  
-  .rotate-button{
-    color:white;
-    z-index: 1;
-    background-color: green;
-    border-radius: 50%;
-    border: 2px solid black;
-    position: absolute;
-    margin-left: 8vw;
-    margin-top: 2.5vw;
-    font-size: 4vw;
-    padding: 0.5vw;
-  }
-  .rotate-button:hover{
-    cursor:pointer;
-  }
+.rotate-button{
+  color:white;
+  z-index: 1;
+  background-color: green;
+  border-radius: 50%;
+  border: 2px solid black;
+  position: absolute;
+  margin-left: 8vw;
+  margin-top: 2.5vw;
+  font-size: 4vw;
+  padding: 0.5vw;
+}
+
+.rotate-button:hover{
+  cursor:pointer;
+}

@@ -1,0 +1,48 @@
+.btn-rotate{
+    background-color: rgb(40, 184, 11);
+    width: 1.4rem;
+    height: 1.4rem;
+    position: absolute;
+    margin-top: calc(5vw - 0.7rem);
+    margin-left: calc(5vw + 1rem);
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    -webkit-box-shadow: 4px 4px 24px -1px rgba(106, 106, 106, 1);
+    -moz-box-shadow: 4px 4px 24px -1px rgba(106, 106, 106, 1);
+    box-shadow: 4px 4px 24px -1px rgba(106, 106, 106, 1);
+    cursor: pointer;
+} 
+
+.btn-rotate:hover{
+    background-color: rgb(25, 139, 2);
+}
+
+.arrow-round {
+    position: relative;
+    width: 0.5rem;
+    height: 0.5rem;
+    
+    border: 0.18rem solid #ffffff;
+    border-radius: 50%;
+    border-right-color: transparent;
+  }
+  
+  .arrow-round::after {
+    content: "";
+    
+    position: absolute;
+    border: 0.32rem solid #ffffff;
+    top: -0.15rem; 
+    left: 0.3rem;
+  
+    border-bottom-color: #ffffff;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-left-color: transparent;
+  }
+  
