@@ -17,6 +17,7 @@ function MainPage() {
     fileInputRef,
     descriptionInputRef,
     galleryInputRef,
+    uploadSuccess,
     handleFileChange,
     sendPhoto,
     deletePhoto,
@@ -34,6 +35,7 @@ function MainPage() {
             deletePhoto={deletePhoto}
             rotatePhoto={rotatePhoto}
             descriptionInputRef={descriptionInputRef}
+            uploadSuccess={uploadSuccess}
           />
           <PhotoUploader
             handleFileChange={handleFileChange}

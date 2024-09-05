@@ -1,9 +1,9 @@
 import React, { useRef, useEffect, useState } from "react";
-import "./PhotoViewer.css";
+import "./PhotoViewer.scss";
 import CloseButton from "./../common/CloseButton"
 import RotateButton from "./../common/RotateButton"
 
-function PhotoViewer({ photo, rotation, deletePhoto, rotatePhoto, descriptionInputRef }) {
+function PhotoViewer({ photo, rotation, deletePhoto, rotatePhoto, descriptionInputRef, uploadSuccess  }) {
   const imageRef = useRef(null);
   const [divImageStyles, setDivImageStyles] = useState({});
   const [imageStyles, setImageStyles] = useState({});
@@ -48,10 +48,10 @@ function PhotoViewer({ photo, rotation, deletePhoto, rotatePhoto, descriptionInp
 
   return (
     <>
-      {photo && (
+      {photo ? (
         <div className="viewer">
           <CloseButton onClick={deletePhoto}/>
-          <RotateButton onCLick={rotatePhoto}/>
+          <RotateButton onClick={rotatePhoto}/>
           <div className="viewer-section">
             <div
               className="photo-viewer"
@@ -71,12 +71,18 @@ function PhotoViewer({ photo, rotation, deletePhoto, rotatePhoto, descriptionInp
               />
             </div>
             <div className="description-viewer">
-              <label>Podpis </label>
-              <input ref={descriptionInputRef} />
+              <div className="form__group field">
+                <input type="input" className="form__field" placeholder="Name" name="name" id='name' ref={descriptionInputRef} />
+                <label htmlFor="name" className="form__label">Podpis</label>
+              </div>
             </div>
           </div>
         </div>
-      )}
+      ) : uploadSuccess ? (
+        <div className="success-message">
+          Dziękujemy za przesłanie zdjęcia!
+        </div>
+      ) : null}
     </>
   );
 }

@@ -5,6 +5,7 @@ const usePhotoManager = (onUploadSuccess) => {
   const [photo, setPhoto] = useState(null);
   const [photoFile, setPhotoFile] = useState(null);
   const [rotation, setRotation] = useState(0);
+  const [uploadSuccess, setUploadSuccess] = useState(false);
   const fileInputRef = useRef(null);
   const descriptionInputRef = useRef(null);
   const galleryInputRef = useRef(null);
@@ -19,20 +20,19 @@ const usePhotoManager = (onUploadSuccess) => {
       reader.readAsDataURL(file);
       setPhotoFile(file);
       setRotation(0);
+      setUploadSuccess(false);
     }
   };
 
   const sendPhoto = async () => {
-    console.log(descriptionInputRef.current.value);
     if (!photoFile) {
-      alert("Proszę najpierw wybrać zdjęcie!");
       return;
     }
 
     try {
       const data = await apiClient.uploadPhoto(photoFile, rotation, true, descriptionInputRef.current.value);
       console.log("Success:", data);
-      alert("Zdjęcie zostało przesłane!");
+      setUploadSuccess(true);
       deletePhoto();
       if (onUploadSuccess) onUploadSuccess();
     } catch (error) {
@@ -56,6 +56,7 @@ const usePhotoManager = (onUploadSuccess) => {
     fileInputRef,
     descriptionInputRef,
     galleryInputRef,
+    uploadSuccess,
     handleFileChange,
     sendPhoto,
     deletePhoto,
