@@ -1,8 +1,8 @@
 import "./RotateButton.scss"
 
-function RotateButton({ onCLick }){
+function RotateButton({ onClick  }){
     return(
-        <button className="btn-rotate" onClick={onCLick}>
+        <button type="button" className="btn-rotate" onClick={ onClick }>
             <div className="arrow-round"></div>
         </button>
     )
