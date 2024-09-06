@@ -30,6 +30,11 @@
         {
             var path = _config.GetValue<string>("StoredFilesPath");
 
+            if (!Path.IsPathFullyQualified(path))
+            {
+                path = Path.Combine(Directory.GetCurrentDirectory(), path);
+            }
+
             if (!Directory.Exists(path))
             {
                 Directory.CreateDirectory(Path.Combine(Directory.GetCurrentDirectory(), path));
