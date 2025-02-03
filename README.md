@@ -60,7 +60,7 @@ To access the Swagger UI, navigate to:
 
     Clone the repository to your local machine by running the following command:
     ```bash
-    git clone https://github.com/your-repo/WeddingPhotoApp.git
+    git clone https://github.com/WeddingPhotoApp.git
     ```
 
 2. **Backend (ASP.NET Core) Setup**
