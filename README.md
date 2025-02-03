@@ -94,7 +94,7 @@ To access the Swagger UI, navigate to:
    dotnet ef database update
    ```
    
-6. **Configure the Database Connection**
+5. **Configure the Database Connection**
 
    Update the PostgreSQL database connection string in the appsettings.json file to point to your newly created database.
 
